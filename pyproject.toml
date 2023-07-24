@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "vivavents"
+version = "0.1.0"
+description = "an event booking app"
+authors = ["Domengo <dominicsengo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

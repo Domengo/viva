@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="AccountSignup w-full relative bg-white">
+    <div class="Rectangle6 w-[702px] h-full left-0 top-0 absolute">
+      <img src="{{ url_for('static', filename='images/signup.png') }}"/>
+    </div>
+  </div>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="flash-message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <div class="Rectangle7 w-[702px] h-[307px] left-0 top-[717px] absolute bg-gradient-to-b from-transparent to-gray-700"></div>
+  <div class="Vivavents left-[271px] top-[968px] absolute text-white text-[33px] font-bold lowercase">VivaVents</div>
+  <div class="Vivavents left-[1150px] top-[172px] absolute text-red-500 text-[33px] font-bold lowercase">VivaVents</div>
+  <div class="CreateAnAccount left-[862px] top-[214px] absolute text-indigo-950 text-[50px] font-bold">Create an account</div>
+  <div class="Group1 w-[448px] h-[60px] left-[862px] top-[385px] absolute">
+  
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    {{ form.fullname.label }}: {{ form.fullname(size=20) }}
+    {% for error in form.fullname.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    {{ form.username.label }}: {{ form.username(size=20) }}
+    {% for error in form.username.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    {{ form.email.label }}: {{ form.email(size=20) }}
+    {% for error in form.email.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    {{ form.password.label }}: {{ form.password(size=20) }}
+    {% for error in form.password.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    {{ form.phone.label }}: {{ form.phone(size=20) }}
+    {% for error in form.phone.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    {{ form.confirm_password.label }}: {{ form.confirm_password(size=20) }}
+    {% for error in form.confirm_password.errors %}
+        <div class="error">{{ error }}</div>
+    {% endfor %}
+
+    <input type="submit" value="Submit">
+  </form>
+  
+</body>
+</html>

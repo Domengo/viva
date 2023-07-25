@@ -1,4 +1,4 @@
-from ap import app
+from viva.ap import app
 
 if __name__ == "__main__":
     app.run(debug=True)
